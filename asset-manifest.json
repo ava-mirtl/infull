@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/ava-mirtl.github.io/infull/static/css/main.f85e387b.css",
-    "main.js": "/ava-mirtl.github.io/infull/static/js/main.2047e3fa.js",
+    "main.js": "/ava-mirtl.github.io/infull/static/js/main.43dbc341.js",
     "static/media/error.png": "/ava-mirtl.github.io/infull/static/media/error.28418e3cb4c57259b0f1.png",
     "static/media/welcome.avif": "/ava-mirtl.github.io/infull/static/media/welcome.06dcb0543d1a2a453cda.avif",
     "static/media/Lorem1.webp": "/ava-mirtl.github.io/infull/static/media/Lorem1.2378491f1a79732e03e9.webp",
     "index.html": "/ava-mirtl.github.io/infull/index.html",
     "main.f85e387b.css.map": "/ava-mirtl.github.io/infull/static/css/main.f85e387b.css.map",
-    "main.2047e3fa.js.map": "/ava-mirtl.github.io/infull/static/js/main.2047e3fa.js.map"
+    "main.43dbc341.js.map": "/ava-mirtl.github.io/infull/static/js/main.43dbc341.js.map"
   },
   "entrypoints": [
     "static/css/main.f85e387b.css",
-    "static/js/main.2047e3fa.js"
+    "static/js/main.43dbc341.js"
   ]
 }
