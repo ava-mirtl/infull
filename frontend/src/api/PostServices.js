@@ -13,7 +13,7 @@ class PostServices {
             });
         } catch (error) {
             console.log(error.message);
-            navigate("/error", { state: { error: error.message } });
+            navigate("/error", error.message&&{ state: { error: error.message } });
         }
     }
     static async logout(url, token, navigate) {
@@ -29,7 +29,7 @@ class PostServices {
             navigate("/auth");
         } catch (error) {
             console.log(error.message);
-            navigate("/error", { state: { error: error.message } });
+            navigate("/error", error.message&&{ state: { error: error.message } });
         }
     }
 }

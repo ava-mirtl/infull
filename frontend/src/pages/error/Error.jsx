@@ -13,7 +13,7 @@ function Error() {
         <div className={styles.box}>
             <div className={styles.wrapper}>
                 <div className={styles.content}>
-                    {location.state.error && <p>{location.state.error}</p>}
+                    {location.state.error? <p>{location.state.error}</p>:<p>Упс! Что-то пошло не так</p>}
 
                     <img
                         src={error_pic}

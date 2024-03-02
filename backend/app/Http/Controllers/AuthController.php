@@ -21,14 +21,17 @@ class AuthController extends Controller
      function register (Request $request): JsonResponse
 
     {
-
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|string|min:6',
+        ]);
         $newUser = new User();
-        $newUser->name = $request->input('name');
-        $newUser->email = $request->input('email');
-        $newUser->password = $request->input('password');
+        $newUser->name = $validatedData['name'];
+        $newUser->email = $validatedData['email'];
+        $newUser->password = bcrypt($validatedData['password']);
         $newUser->save();
-        $credentials = request(['email', 'password']);
-        $token = auth()->attempt($credentials);
+        $token = auth()->attempt($request->only('email', 'password'));
         return response()->json([
             'user'         => Auth::user(),
             'access_token' => $token,
@@ -39,11 +42,15 @@ class AuthController extends Controller
      *
      * @return JsonResponse
      */
-    public function login(): JsonResponse
+    public function login(Request $request): JsonResponse
     {
-        $credentials = request(['email', 'password']);
 
-        if (! $token = auth()->attempt($credentials)) {
+        $validatedData = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|string',
+        ]);
+
+        if (! $token = auth()->attempt($validatedData)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
         return response()->json([
